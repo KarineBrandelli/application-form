@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.image-container {
+  background: url("https://images.unsplash.com/photo-1530907487668-af02f65b4afe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex: 1;
+
+  max-width: 100%;
+  height: 100%;
+}
+
+.logo {
+  margin: 2rem 0 0 2rem;
+  position: absolute;
+  
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
+  background-color: #191816;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 35rem;
+  padding: 5rem 0;
+  border-radius: 0.8rem;
+  background-color: #0f0f0f;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+}
+
+.title-box {
+  display: flex;
+  align-items: center;
+
+  padding-bottom: 1rem;
+  gap: 0.8rem;
+}
+
+.form h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  color: #d4ccb6;
+}
+
+.info-form {
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 1.5rem;
+  color: #afb6c2;
+  font-size: 1rem;
+}
+
+.form-input-box {
+  border: none;
+}
+
+.input-box-email input,
+.input-box-password input {
+  background-color: #24221f;
+  border-radius: 0.35rem;
+  border: 1px solid #afb6c2;
+  height: 3rem;
+  width: 100%;
+}
+
+input {
+  font-family: "Poppins", sans-serif;
+  color: #afb6c2;
+  font-size: 1rem;
+  padding-left: 2.7rem;
+}
+
+input::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: #afb6c2;
+  font-size: 1rem;
+}
+
+.input-icon {
+  position: absolute;
+  margin: 0.8rem;
+}
+
+.input-icon-eye {
+  position: absolute;
+  margin: 0.8rem -2rem;
+}
+
+.input-box-email input:focus,
+.input-box-email input:active,
+.password-box input:focus,
+.password-box input:active {
+  border: 0.2rem solid #ffc632;
+}
+
+.label-email,
+.label-password,
+.remember-login {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #afb6c2;
+}
+
+.email-box,
+.password-box {
+  padding-bottom: 1.25rem;
+}
+
+.forgot-password,
+.no-have-account {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #ffc632;
+}
+
+.other-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 1rem;
+}
+
+.remember-login {
+  display: flex;
+
+  gap: 0.5rem;
+}
+
+.button-login {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffc632;
+  color: #473404;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border: none;
+  width: 100%;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.container-label {
+  display: block;
+  position: relative;
+  padding-left: 1.75rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #afb6c2;
+}
+
+.container-label input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  margin-top: 0.2rem;
+  left: 0;
+  height: 1.25rem;
+  width: 1.25rem;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 0.25rem;
+}
+
+.container-label input:checked ~ .checkmark {
+  background-color: #ffc632;
+  border: none;
+}
+
+.checkmark::after {
+  display: none;
+  content: "";
+  position: absolute;
+}
+
+.container-label .checkmark::after {
+  content: "";
+  left: 0.35rem;
+  top: 0.2rem;
+  width: 5px;
+  height: 9px;
+  transform: rotate(45deg);
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.container-label input:checked ~ .checkmark::after {
+  display: block;
+}
+
+
+/* LAPTOP */
+
+@media only screen and (max-width: 1280px) {
+  .image-container {
+    max-width: 35%;
+  }
+}
+
+/* TABLET */
+
+@media only screen and (max-width: 915px) {
+  .image-container {
+    display: none;
+  }
+
+  .main-content {
+    background: url("https://images.unsplash.com/photo-1530907487668-af02f65b4afe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 595px) {
+  .form {
+    max-width: 85%;
+    padding: 2.5rem 0;
+  }
+
+  .other-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .info-form,
+  .no-have-account {
+    text-align: center;
+  }
+}
