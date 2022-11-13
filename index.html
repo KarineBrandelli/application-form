@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Form</title>
+    <title>Sua viagem dos sonhos!</title>
 
     <link rel="stylesheet" href="./css/styles.css" />
 
@@ -21,77 +21,36 @@
     <header>
       <img class="logo" src="./assets/sign-icon.png"/>
     </header>
-
     <main class="main-content">
       <form class="form" action="#">
         <div class="form-content">
-          <section class="title-box">
+          <div class="title-box">
             <img
               class="login-icon"
               src="./assets/log-in.svg"
-              alt="Login icon"
-            />
+              alt="Login icon" />
             <h1 class="title">Cadastre e concorra!</h1>
-          </section>
+          </div>
           <p class="info-form">Preencha o formulário e concorra a uma viagem dos sonhos para você mais um acompanhante para o local de sua escolha!</p>
-
-          <fieldset class="form-input-box">
-            <div class="email-box">
-              <label class="label-email" for="email"> E-mail </label>
-
-              <div class="input-box-email">
-                <img
-                  class="input-icon"
-                  src="./assets/mail.svg"
-                  alt="Email icon" />
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Digite seu e-mail" />
-              </div>
-            </div>
-
-            <div class="password-box">
-              <label class="label-password" for="password"> Senha </label>
-
-              <div class="input-box-password">
-                <img
-                  class="input-icon"
-                  src="./assets/lock.svg"
-                  alt="Password icon" />
-                <input
-                  type="password"
-                  id="password"
-                  placeholder="Digite sua senha" />
-                <img
-                  class="input-icon-eye"
-                  src="./assets/eye.svg"
-                  alt="Show/Hide password"
-                />
-              </div>
-            </div>
-
-            <div class="other-actions">
-              <label class="container-label">
-                Lembre-me
-                <input type="checkbox" checked="checked" />
-                <span class="checkmark"></span>
-              </label>
-              <a class="forgot-password" href="#">
-                <strong>Esqueci minha senha</strong>
-              </a>
-            </div>
-
-            <button class="button-login">ENTRAR</button>
-
-            <div class="register">
-              <a class="no-have-account" href="#">
-                Não tem uma conta?
-                <strong>Registre-se</strong>
-              </a>
-            </div>
-          </fieldset>
         </div>
+
+        <fieldset class="form-input-box">
+
+          <div class="email-box">
+            <label class="label-email" for="email"> E-mail </label>
+            <input
+              class="input-box-email"
+              type="email"
+              id="email"
+              placeholder="Digite seu e-mail" />
+          </div>
+
+          <div class="button-center">
+            <button class="btn-cadastrar">CADASTRAR</button>
+          </div>
+
+        </fieldset>
+
       </form>
     </main>
 

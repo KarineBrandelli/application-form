@@ -42,6 +42,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   width: 100%;
   max-width: 35rem;
@@ -53,7 +54,7 @@ body {
 .form-content {
   display: flex;
   flex-direction: column;
-  max-width: 75%;
+  width: 85%;
 }
 
 .title-box {
@@ -80,22 +81,28 @@ body {
 
 .form-input-box {
   border: none;
+  width: 85%;
 }
 
-.input-box-email input,
-.input-box-password input {
+.input-box-email {
   background-color: #24221f;
   border-radius: 0.35rem;
-  border: 1px solid #afb6c2;
+  border: 0.125rem solid #afb6c2;
+  outline: none;
   height: 3rem;
   width: 100%;
+}
+
+.input-box-email:focus {
+  border: 0.175rem solid #ffc632;
+  outline: none;
 }
 
 input {
   font-family: "Poppins", sans-serif;
   color: #afb6c2;
   font-size: 1rem;
-  padding-left: 2.7rem;
+  padding-left: 1rem;
 }
 
 input::placeholder {
@@ -104,59 +111,20 @@ input::placeholder {
   font-size: 1rem;
 }
 
-.input-icon {
-  position: absolute;
-  margin: 0.8rem;
-}
-
-.input-icon-eye {
-  position: absolute;
-  margin: 0.8rem -2rem;
-}
-
-.input-box-email input:focus,
-.input-box-email input:active,
-.password-box input:focus,
-.password-box input:active {
-  border: 0.2rem solid #ffc632;
-}
-
-.label-email,
-.label-password,
-.remember-login {
+label {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   color: #afb6c2;
 }
 
-.email-box,
-.password-box {
+.email-box {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
   padding-bottom: 1.25rem;
 }
 
-.forgot-password,
-.no-have-account {
-  font-family: "Poppins", sans-serif;
-  text-decoration: none;
-  font-size: 0.9rem;
-  color: #ffc632;
-}
-
-.other-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding-bottom: 1rem;
-}
-
-.remember-login {
-  display: flex;
-
-  gap: 0.5rem;
-}
-
-.button-login {
+.btn-cadastrar {
   font-family: "Poppins", sans-serif;
   background-color: #ffc632;
   color: #473404;
@@ -164,66 +132,12 @@ input::placeholder {
   font-size: 1rem;
   padding: 0.8rem;
   border: none;
-  width: 100%;
+  width: 70%;
 }
 
-.register {
+.button-center {
   display: flex;
   justify-content: center;
-  padding-top: 1rem;
-}
-
-.container-label {
-  display: block;
-  position: relative;
-  padding-left: 1.75rem;
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  color: #afb6c2;
-}
-
-.container-label input {
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-}
-
-.checkmark {
-  position: absolute;
-  margin-top: 0.2rem;
-  left: 0;
-  height: 1.25rem;
-  width: 1.25rem;
-  background-color: white;
-  border: 1px solid gray;
-  border-radius: 0.25rem;
-}
-
-.container-label input:checked ~ .checkmark {
-  background-color: #ffc632;
-  border: none;
-}
-
-.checkmark::after {
-  display: none;
-  content: "";
-  position: absolute;
-}
-
-.container-label .checkmark::after {
-  content: "";
-  left: 0.35rem;
-  top: 0.2rem;
-  width: 5px;
-  height: 9px;
-  transform: rotate(45deg);
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-}
-
-.container-label input:checked ~ .checkmark::after {
-  display: block;
 }
 
 
