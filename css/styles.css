@@ -46,7 +46,7 @@ body {
 
   width: 100%;
   max-width: 35rem;
-  padding: 5rem 0;
+  padding: 2.25rem 0;
   border-radius: 0.8rem;
   background-color: #0f0f0f;
 }
@@ -84,7 +84,7 @@ body {
   width: 85%;
 }
 
-.input-box-email {
+.input-box {
   background-color: #24221f;
   border-radius: 0.35rem;
   border: 0.125rem solid #afb6c2;
@@ -93,7 +93,7 @@ body {
   width: 100%;
 }
 
-.input-box-email:focus {
+.input-box:focus {
   border: 0.175rem solid #ffc632;
   outline: none;
 }
@@ -117,11 +117,17 @@ label {
   color: #afb6c2;
 }
 
-.email-box {
+.name-box,
+.email-box,
+.birth-box,
+.cpf-box,
+.cep-box,
+.city-box,
+.state-box {
   display: flex;
   flex-direction: column;
   gap: .35rem;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1rem;
 }
 
 .btn-cadastrar {
@@ -130,16 +136,12 @@ label {
   color: #473404;
   font-weight: 600;
   font-size: 1rem;
+  margin-top: .5rem;
   padding: 0.8rem;
   border: none;
-  width: 70%;
+  width: 100%;
+  cursor: pointer;
 }
-
-.button-center {
-  display: flex;
-  justify-content: center;
-}
-
 
 /* LAPTOP */
 
