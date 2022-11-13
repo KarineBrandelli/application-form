@@ -85,6 +85,10 @@ body {
 }
 
 .input-box {
+  font-family: "Poppins", sans-serif;
+  color: #afb6c2;
+  font-size: 1rem;
+  padding: 0 1rem;
   background-color: #24221f;
   border-radius: 0.35rem;
   border: 0.125rem solid #afb6c2;
@@ -98,14 +102,7 @@ body {
   outline: none;
 }
 
-input {
-  font-family: "Poppins", sans-serif;
-  color: #afb6c2;
-  font-size: 1rem;
-  padding-left: 1rem;
-}
-
-input::placeholder {
+.input-box::placeholder {
   font-family: "Poppins", sans-serif;
   color: #afb6c2;
   font-size: 1rem;
