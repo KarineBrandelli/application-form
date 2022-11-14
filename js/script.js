@@ -10,6 +10,8 @@ camposDoFormulario.forEach((campo) => {
   campo.addEventListener("blur", () => verificaCampo(campo));
 });
 
+// validação de idade
+
 function verificaCampo(campo){
   if (campo.name == "aniversario" && campo.value != "") {
     maiorDeIdade(campo);
@@ -33,3 +35,6 @@ function validaIdade(data) {
 
   return dataAtual >= dataMais18
 };
+
+// validação de cpf
+

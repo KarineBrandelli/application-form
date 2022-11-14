@@ -31,7 +31,7 @@ body {
 
   flex: 1.75;
   background-color: #191816;
-  padding: 0 2rem;
+  padding: 2rem;
 }
 
 .form {
@@ -305,5 +305,7 @@ h3 {
     max-width: 100%;
   }
 
-
+  body {
+    height: auto;
+  }
 }
