@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -65,14 +66,12 @@ body {
   gap: 0.8rem;
 }
 
-.form h1 {
-  font-family: "Poppins", sans-serif;
+.form h1 {  
   font-size: 1.7rem;
   color: #d4ccb6;
 }
 
 .info-form {
-  font-family: "Roboto", sans-serif;
   text-align: justify;
   padding-bottom: 1.5rem;
   color: #afb6c2;
@@ -85,7 +84,6 @@ body {
 }
 
 .input-box {
-  font-family: "Poppins", sans-serif;
   color: #afb6c2;
   font-size: 1rem;
   padding: 0 1rem;
@@ -103,7 +101,6 @@ body {
 }
 
 .input-box::placeholder {
-  font-family: "Poppins", sans-serif;
   color: #afb6c2;
   font-size: 1rem;
 }
@@ -124,7 +121,6 @@ input:valid {
 }
 
 label {
-  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   color: #afb6c2;
 }
@@ -143,7 +139,6 @@ label {
 }
 
 .btn-cadastrar {
-  font-family: "Poppins", sans-serif;
   background-color: #ffc632;
   color: #473404;
   font-weight: 600;
@@ -153,6 +148,12 @@ label {
   border: none;
   width: 100%;
   cursor: pointer;
+}
+
+.error-message {
+  color: #ffc632;
+  font-size: .9rem;
+  margin-top: .15rem;
 }
 
 /* LAPTOP */
