@@ -41,11 +41,12 @@
 
         <fieldset class="form-input-box">
           <div class="name-box">
-            <label> Nome </label>
+            <label for="nome"> Nome </label>
             <input
+              name="nome"
               class="input-box"
               type="text"
-              id="name"
+              id="nome"
               placeholder="Digite seu nome"
               minlength="4"
               pattern="([a-zA-Z\s]+$)"
@@ -55,8 +56,9 @@
           </div>
 
           <div class="email-box">
-            <label> E-mail </label>
+            <label for="email"> E-mail </label>
             <input
+              name="email"
               class="input-box"
               type="email"
               id="email"
@@ -68,19 +70,21 @@
           </div>
 
           <div class="birth-box">
-            <label> Data de Nascimento </label>
+            <label for="aniversario"> Data de Nascimento </label>
             <input
+              name="aniversario"
               class="input-box"
               type="date"
-              id="birth"
+              id="aniversario"
               placeholder="Digite sua data de nascimento"
               required />
             <span class="error-message"></span>
           </div>
 
           <div class="cpf-box">
-            <label> CPF </label>
+            <label for="cpf"> CPF </label>
             <input
+              name="cpf"
               class="input-box"
               type="text"
               id="cpf"
@@ -90,8 +94,9 @@
           </div>
 
           <div class="cep-box">
-            <label> CEP </label>
+            <label for="cep"> CEP </label>
             <input
+              name="cep"
               class="input-box"
               type="text"
               id="cep"
@@ -101,8 +106,9 @@
           </div>
 
           <div class="city-box">
-            <label> Cidade </label>
+            <label for="cidade"> Cidade </label>
             <input
+              name="cidade"
               class="input-box"
               type="text"
               id="city"
@@ -112,8 +118,9 @@
           </div>
 
           <div class="state-box">
-            <label> Estado </label>
+            <label for="estado"> Estado </label>
             <input
+              name="estado"
               class="input-box"
               type="text"
               id="state"
@@ -122,11 +129,11 @@
             <span class="error-message"></span>
           </div>
 
-          <button
+          <input
+            type="submit"
+            value="CADASTRAR"
             class="btn-cadastrar"
-            id="btn">
-              CADASTRAR
-          </button>
+            id="enviar" />
         </fieldset>
       </form>
     </main>
