@@ -8,8 +8,6 @@
 
     <link rel="stylesheet" href="./css/styles.css" />
 
-    <link rel="shortcut icon" href="./assets/log-in.svg" type="image/x-icon" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,15 +16,7 @@
   </head>
 
   <body>
-    <header>
-      <img
-        class="logo"
-        src="./assets/sign-icon.png"/>
-    </header>
-    <div
-      class="bg-black">
-    </div>
-    <main>
+    <main class="bg-black">
       <form class="form" action="#">
         <div class="form-content">
           <div class="title-box">
@@ -76,7 +66,7 @@
               class="input-box"
               type="date"
               id="aniversario"
-              placeholder="Digite sua data de nascimento"
+              style="font-size: .9rem"
               required />
             <span class="error-message-aniversario"></span>
           </div>
@@ -94,39 +84,81 @@
           </div>
 
           <div class="cep-box">
-            <label for="cep"> CEP </label>
-            <input
-              name="cep"
-              class="input-box"
-              type="text"
-              id="cep"
-              placeholder="Digite seu CEP"
-              required />
-            <span class="error-message-cep"></span>
+            <div class="cep-input">
+              <label for="cep"> CEP </label>
+              <input
+                name="cep"
+                class="input-box"
+                type="text"
+                id="cep"
+                placeholder="Digite seu CEP"
+                required />
+              <span class="error-message-cep"></span>
+            </div>
+
+            <div class="state-input">
+              <label for="estado"> Estado </label>
+              <input
+                name="estado"
+                class="input-box"
+                type="text"
+                id="state"
+                placeholder="Digite seu estado"
+                required />
+              <span class="error-message-estado"></span>
+            </div>
           </div>
 
           <div class="city-box">
-            <label for="cidade"> Cidade </label>
-            <input
-              name="cidade"
-              class="input-box"
-              type="text"
-              id="city"
-              placeholder="Digite sua cidade"
-              required />
-            <span class="error-message-cidade"></span>
+            <div class="city-input">
+              <label for="cidade"> Cidade </label>
+              <input
+                name="cidade"
+                class="input-box"
+                type="text"
+                id="city"
+                placeholder="Digite sua cidade"
+                required />
+              <span class="error-message-cidade"></span>
+            </div>
+
+            <div class="bairro-input">
+              <label for="bairro"> Bairro </label>
+              <input
+                name="bairro"
+                class="input-box"
+                type="text"
+                id="bairro"
+                placeholder="Digite seu bairro"
+                required />
+              <span class="error-message-bairro"></span>
+            </div>
           </div>
 
-          <div class="state-box">
-            <label for="estado"> Estado </label>
-            <input
-              name="estado"
-              class="input-box"
-              type="text"
-              id="state"
-              placeholder="Digite seu estado"
-              required />
-            <span class="error-message-estado"></span>
+          <div class="rua-box">
+            <div class="rua-input">
+              <label for="rua"> Rua </label>
+              <input
+                name="rua"
+                class="input-box"
+                type="text"
+                id="rua"
+                placeholder="Digite sua rua"                
+                required />
+              <span class="error-message-rua"></span>
+            </div>
+
+            <div class="complemento-input">
+              <label for="complemento"> Complemento </label>
+              <input
+                name="complemento"
+                class="input-box"
+                type="text"
+                id="complemento"
+                placeholder="Digite o complemento (ex: Apto 102)"
+                required />
+              <span class="error-message-complemento"></span>
+            </div>
           </div>
 
           <input
@@ -141,6 +173,7 @@
     <div
       class="image-container">
     </div>
+
     <script
       src="./js/script.js">
     </script>

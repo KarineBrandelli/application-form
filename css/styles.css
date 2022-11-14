@@ -21,13 +21,7 @@ body {
   flex: 1;
 
   max-width: 100%;
-  height: 100%
-}
-
-.logo {
-  margin: 2rem 0 0 2rem;
-  position: absolute;
-  
+  height: 100%;
 }
 
 .bg-black {
@@ -35,14 +29,9 @@ body {
   align-items: center;
   justify-content: center;
 
-  flex: 1;
+  flex: 1.75;
   background-color: #191816;
-}
-
-main {
-  position: absolute;
-  margin-left: 15rem;
-  margin-top: 3rem;
+  padding: 0 2rem;
 }
 
 .form {
@@ -108,7 +97,7 @@ main {
 
 .input-box::placeholder {
   color: #afb6c2;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 input:-webkit-autofill,
@@ -137,11 +126,30 @@ label {
 .cpf-box,
 .cep-box,
 .city-box,
-.state-box {
+.state-box,
+.rua-box {
   display: flex;
   flex-direction: column;
-  gap: .1rem;
+  gap: .2rem;
   padding-bottom: .7rem;
+}
+
+.cep-box,
+.city-box,
+.rua-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cep-input,
+.state-input,
+.city-input,
+.bairro-input,
+.rua-input,
+.complemento-input {
+  max-width: 48%;
 }
 
 .btn-cadastrar {
@@ -149,7 +157,7 @@ label {
   color: #473404;
   font-weight: 600;
   font-size: 1rem;
-  margin-top: .5rem;
+  margin-top: .75rem;
   padding: 0.8rem;
   border: none;
   width: 100%;
@@ -166,7 +174,7 @@ span {
 
 @media only screen and (max-width: 1280px) {
   .image-container {
-    max-width: 35%;
+    max-width: 25%;
   }
 }
 
@@ -177,31 +185,58 @@ span {
     display: none;
   }
 
-  .main-content {
+  .bg-black {
     background: url("https://images.unsplash.com/photo-1530907487668-af02f65b4afe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
 
+  .form h1 {  
+    font-size: 1.5rem;
+  }
+
+  .info-form, label {
+    font-size: .9rem;
+  }
 }
 
 /* MOBILE */
 
 @media only screen and (max-width: 595px) {
   .form {
-    max-width: 85%;
-    padding: 2.5rem 0;
+    width: 100%;
+    padding: 2rem 0;
   }
 
-  .other-actions {
+  .info-form {
+    text-align: center;
+  }
+
+  .name-box,
+  .email-box,
+  .birth-box,
+  .cpf-box,
+  .cep-box,
+  .city-box,
+  .state-box,
+  .rua-box {
+    padding-bottom: .9rem;
+  }
+
+  .cep-box,
+  .city-box,
+  .rua-box {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
   }
 
-  .info-form,
-  .no-have-account {
-    text-align: center;
+  .cep-input,
+  .state-input,
+  .city-input,
+  .bairro-input,
+  .rua-input,
+  .complemento-input {
+    max-width: 100%;
   }
 }
