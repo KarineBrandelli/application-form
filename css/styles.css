@@ -156,7 +156,7 @@ label {
   cursor: pointer;
 }
 
-.error-message {
+span {
   color: #ffc632;
   font-size: .9rem;
   margin-top: .15rem;
