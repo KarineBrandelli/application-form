@@ -19,12 +19,24 @@ function verificaCampo(campo){
     validaCPF(campo);
   }
 
+  if (campo.name == "cpf" && campo.value === "") {
+    cpfVazio(campo);
+  }
+
   if (campo.name == 'nome' && campo.value === "") {
     validaNome(campo);
   }
 
   if (campo.name == 'nome' && campo.value != "") {
     verificaNome(campo);
+  }
+
+  if (campo.name == 'email' && campo.value === "") {
+    validaEmail(campo);
+  }
+
+  if (campo.name == 'email' && campo.value != "") {
+    verificaEmail(campo);
   }
 };
 
@@ -42,12 +54,31 @@ function verificaNome(campo) {
   const myRegex = /[a-zA-Z\s]+$/;
   const result = myRegex.test(valorNome)
   if (!result) {
-    erroNome.innerHTML = 'Números não são permitidos.';
+    erroNome.innerHTML = 'Números e caracteres especiais (",!,@,#,$,%,&,*) não são permitidos.';
   } else {
     erroNome.innerHTML = '';
   }
 };
 
+// validação de e-mail
+function validaEmail(campo) {
+  const erroEmail = document.querySelector('.error-message-email');
+  erroEmail.innerHTML = 'Esse campo é obrigatório.';
+};
+
+function verificaEmail(campo) {
+  const erroEmail = document.querySelector('.error-message-email');
+  const inputEmail = document.querySelector('#email');
+  const valorEmail = inputEmail.value;
+
+  const myRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+  const result = myRegex.test(valorEmail);
+  if (!result) {
+    erroEmail.innerHTML = 'Preencha um e-mail válido (usuario@domínio.com)';
+  } else {
+    erroEmail.innerHTML = '';
+  }
+};
 
 // validação de idade
 function maiorDeIdade(campo) {
@@ -71,6 +102,18 @@ function validaIdade(data) {
 };
 
 // validação de cpf
+function cpfVazio(campo) {
+  const erroCPF = document.querySelector('.error-message-cpf');
+  const inputCPF = document.querySelector('#cpf');
+  const valorCPF = inputCPF.value;
+
+  if (valorCPF === "") {
+    erroCPF.innerHTML = "Esse campo é obrigatório."
+  } else {
+    erroCPF.innerHTML = "";
+  }
+};
+
 function validaCPF(campo) {
   const cpf = campo.value.replace(/\.|-/g, "");
   const erroCPF = document.querySelector('.error-message-cpf');
@@ -97,7 +140,7 @@ function validaNumerosRepetidos(cpf) {
     '77777777777',
     '88888888888',
     '99999999999'
-  ]
+  ];
 
   return numerosRepetidos.includes(cpf)
 };
