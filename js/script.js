@@ -7,14 +7,18 @@ formulario.addEventListener("submit", (event) => {
 })
 
 camposDoFormulario.forEach((campo) => {
-  campo.addEventListener("blur", () => verificaCampo(campo));
+  campo.addEventListener("blur", () => 
+    verificaCampo(campo));
 });
 
 // validação de idade
-
 function verificaCampo(campo){
   if (campo.name == "aniversario" && campo.value != "") {
     maiorDeIdade(campo);
+  }
+
+  if (campo.name == "cpf" && campo.value.length >= 11) {
+    validaCPF(campo);
   }
 };
 
@@ -22,7 +26,9 @@ function maiorDeIdade(campo) {
   const dataNascimento = new Date(campo.value);
   const erroAniversario = document.querySelector('.error-message-aniversario');
   if (!validaIdade(dataNascimento)){
-    erroAniversario.innerHTML = 'O usuário não é maior de idade.';
+    erroAniversario.innerHTML = 'É preciso ser maior de idade para se cadastrar.';
+  } else {
+    erroAniversario.innerHTML = '';
   }
 };
 
@@ -37,16 +43,17 @@ function validaIdade(data) {
 };
 
 // validação de cpf
-
 function validaCPF(campo) {
   const cpf = campo.value.replace(/\.|-/g, "");
+  const erroCPF = document.querySelector('.error-message-cpf');
 
   if (
     validaNumerosRepetidos(cpf) ||
     validaPrimeiroDigito(cpf) ||
     validaSegundoDigito(cpf)) {
-      // campo.setCustomValidity('Esse cpf não é válido');
-      console.log('invalido')
+    erroCPF.innerHTML = 'O CPF informado não é válido.';
+  } else {
+    erroCPF.innerHTML = '';
   }
 };
 
