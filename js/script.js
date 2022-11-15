@@ -8,6 +8,8 @@ formulario.addEventListener("submit", (event) => {
 camposDoFormulario.forEach((campo) => {
   campo.addEventListener("blur", () => 
     verificaCampo(campo));
+  campo.addEventListener("invalid", evento =>
+    evento.preventDefault()); 
 });
 
 function verificaCampo(campo){
