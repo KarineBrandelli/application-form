@@ -3,13 +3,12 @@ const formulario = document.querySelector('.form');
 
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
-})
+  window.location.href = "./cadastro-concluido.html";
+});
 
 camposDoFormulario.forEach((campo) => {
   campo.addEventListener("blur", () => 
     verificaCampo(campo));
-  campo.addEventListener("invalid", evento =>
-    evento.preventDefault()); 
 });
 
 function verificaCampo(campo){
