@@ -1,6 +1,5 @@
 const camposDoFormulario = document.querySelectorAll("[required]");
 const formulario = document.querySelector('.form');
-console.log(camposDoFormulario)
 
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -11,7 +10,6 @@ camposDoFormulario.forEach((campo) => {
     verificaCampo(campo));
 });
 
-// validação de idade
 function verificaCampo(campo){
   if (campo.name == "aniversario" && campo.value != "") {
     maiorDeIdade(campo);
@@ -20,8 +18,38 @@ function verificaCampo(campo){
   if (campo.name == "cpf" && campo.value.length >= 11) {
     validaCPF(campo);
   }
+
+  if (campo.name == 'nome' && campo.value === "") {
+    validaNome(campo);
+  }
+
+  if (campo.name == 'nome' && campo.value != "") {
+    verificaNome(campo);
+  }
 };
 
+// validação de nome
+function validaNome(campo) {
+  const erroNome = document.querySelector('.error-message-name');
+  erroNome.innerHTML = 'Esse campo é obrigatório.';
+};
+
+function verificaNome(campo) {
+  const erroNome = document.querySelector('.error-message-name');
+  const inputNome = document.querySelector('#nome');
+  const valorNome = inputNome.value;
+
+  const myRegex = /[a-zA-Z\s]+$/;
+  const result = myRegex.test(valorNome)
+  if (!result) {
+    erroNome.innerHTML = 'Números não são permitidos.';
+  } else {
+    erroNome.innerHTML = '';
+  }
+};
+
+
+// validação de idade
 function maiorDeIdade(campo) {
   const dataNascimento = new Date(campo.value);
   const erroAniversario = document.querySelector('.error-message-aniversario');
@@ -59,16 +87,16 @@ function validaCPF(campo) {
 
 function validaNumerosRepetidos(cpf) {
   const numerosRepetidos = [
-  '00000000000',
-  '11111111111',
-  '22222222222',
-  '33333333333',
-  '44444444444',
-  '55555555555',
-  '66666666666',
-  '77777777777',
-  '88888888888',
-  '99999999999'
+    '00000000000',
+    '11111111111',
+    '22222222222',
+    '33333333333',
+    '44444444444',
+    '55555555555',
+    '66666666666',
+    '77777777777',
+    '88888888888',
+    '99999999999'
   ]
 
   return numerosRepetidos.includes(cpf)
@@ -81,13 +109,13 @@ function validaPrimeiroDigito(cpf) {
   for (let tamanho = 0; tamanho < 9; tamanho++) {
     soma += cpf[tamanho] * multiplicador;
     multiplicador--
-  }
+  };
 
   soma = (soma * 10) % 11;
 
   if (soma == 10 || soma == 11) {
     soma = 0;
-  }
+  };
 
   return soma != cpf[9];
 };
@@ -97,15 +125,15 @@ function validaSegundoDigito(cpf) {
   let multiplicador = 11;
 
   for (let tamanho = 0; tamanho < 10; tamanho++) {
-      soma += cpf[tamanho] * multiplicador;
-      multiplicador--
-  }
+    soma += cpf[tamanho] * multiplicador;
+    multiplicador--
+  };
 
   soma = (soma * 10) % 11;
 
   if (soma == 10 || soma == 11) {
-      soma = 0;
-  }
+    soma = 0;
+  };
 
   return soma != cpf[10];
 };
