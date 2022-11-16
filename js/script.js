@@ -16,27 +16,42 @@ inputCEP.addEventListener('focusout', () =>
 
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
-  nomeTemNumero();
-  dataEhInvalida();
+  const inputsValidados = [
+    nomeTemNumero(),
+    dataEhInvalida(),
+    comprimentoCPF()
+  ];
+
+  const listaValidada = inputsValidados.every(validado => validado);
+
+  if (listaValidada) {
+    window.location.href = "/cadastro-concluido.html";
+  }
 });
 
 function nomeTemNumero() {
-  const regex = /\d/g;
+  const regex = /[a-zA-Z\s]+$/;
   const resultado = regex.test(inputNome.value);
-  if (resultado);
-  else {
-    window.location.href = "/cadastro-concluido.html";
-  }
+
+  return resultado
 };
 
 function dataEhInvalida() {
   const dataNascimento = new Date(inputDataNascimento.value);
-  if (validaIdade(dataNascimento)){
-    console.log('1')
-  } else {
-    console.log('2')
-  }
+
+  return validaIdade(dataNascimento)
 };
+
+function comprimentoCPF() {
+  const cpf = inputCPF.value.replace(/\.|-/g, "");
+  const cpfValidado =  [
+    !validaPrimeiroDigito(cpf),
+    !validaSegundoDigito(cpf),
+    cpf.length === 11
+  ]
+
+  return cpfValidado.every(validado => validado);
+}
 
 function verificaCampo(campo) {
   if (campo.name == "aniversario" && campo.value != "") {
