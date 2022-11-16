@@ -1,17 +1,23 @@
 const camposDoFormulario = document.querySelectorAll("[required]");
 const formulario = document.querySelector('.form');
+const cep = document.querySelector('#cep');
+const inputCEP = cep.value;
 
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
+
   window.location.href = "./cadastro-concluido.html";
 });
 
 camposDoFormulario.forEach((campo) => {
-  campo.addEventListener("blur", () => 
-    verificaCampo(campo));
+  campo.addEventListener("blur", () => verificaCampo(campo));
 });
 
-function verificaCampo(campo){
+cep.addEventListener('focusout', () => 
+  buscaEndereco(cep.value)
+);
+
+function verificaCampo(campo) {
   if (campo.name == "aniversario" && campo.value != "") {
     maiorDeIdade(campo);
   }
@@ -180,4 +186,34 @@ function validaSegundoDigito(cpf) {
   };
 
   return soma != cpf[10];
+};
+
+// validação de cep
+async function buscaEndereco(cep) {
+  const erroCEP = document.querySelector('.error-message-cep');
+  erroCEP.innerHTML = '';
+
+  try {
+    let consultaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json`);
+    let consultaCEPConvertida = await consultaCEP.json();
+    
+    if (consultaCEPConvertida.erro) {
+      throw Error();
+    }
+
+    let estado = document.getElementById('state'); 
+    let cidade = document.getElementById('city');
+    let bairro = document.getElementById('bairro'); 
+    let logradouro = document.getElementById('rua');
+
+    estado.value = consultaCEPConvertida.uf; 
+    cidade.value = consultaCEPConvertida.localidade;
+    logradouro.value = consultaCEPConvertida.logradouro;
+    bairro.value = consultaCEPConvertida.bairro;
+
+    return consultaCEPConvertida;
+
+    } catch (erro) {
+    erroCEP.innerHTML = 'CEP inválido! Tente novamente.';
+  }
 };

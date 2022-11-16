@@ -42,7 +42,7 @@ body {
 
   width: 100%;
   max-width: 55rem;
-  padding: 2rem 0;
+  padding: 1.5rem;
   border-radius: 0.8rem;
   background-color: #0f0f0f;
 }
@@ -50,7 +50,6 @@ body {
 .form-content {
   display: flex;
   flex-direction: column;
-  width: 88%;
 }
 
 .title-box {
@@ -75,7 +74,6 @@ body {
 
 .form-input-box {
   border: none;
-  width: 88%;
 }
 
 .input-box {
