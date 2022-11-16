@@ -5,25 +5,6 @@ const inputEmail = document.querySelector('#email');
 const inputDataNascimento = document.querySelector('#aniversario');
 const inputCPF = document.querySelector('#cpf');
 const inputCEP = document.querySelector('#cep');
-const button = document.querySelector('#enviar');
-
-formulario.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const regex = /\d/g;
-  const resultado = regex.test(inputNome.value);
-  if (resultado) {
-    console.log('tem numeros')
-  }
-  else {
-    window.location.href = "/cadastro-concluido.html";
-  }
-
-
-
-
-  
-});
 
 camposDoFormulario.forEach((campo) => {
   campo.addEventListener("blur", () => verificaCampo(campo));
@@ -33,13 +14,29 @@ inputCEP.addEventListener('focusout', () =>
   buscaEndereco(inputCEP.value)
 );
 
+formulario.addEventListener("submit", (event) => {
+  event.preventDefault();
+  nomeTemNumero();
+  dataEhInvalida();
+});
 
-inputEmail.addEventListener('input', () => {})
-inputDataNascimento.addEventListener('input', () => {})
-inputCPF.addEventListener('input', () => {})
-inputCEP.addEventListener('input', () => {})
+function nomeTemNumero() {
+  const regex = /\d/g;
+  const resultado = regex.test(inputNome.value);
+  if (resultado);
+  else {
+    window.location.href = "/cadastro-concluido.html";
+  }
+};
 
-
+function dataEhInvalida() {
+  const dataNascimento = new Date(inputDataNascimento.value);
+  if (validaIdade(dataNascimento)){
+    console.log('1')
+  } else {
+    console.log('2')
+  }
+};
 
 function verificaCampo(campo) {
   if (campo.name == "aniversario" && campo.value != "") {
@@ -113,6 +110,7 @@ function verificaEmail(campo) {
 function maiorDeIdade(campo) {
   const dataNascimento = new Date(campo.value);
   const erroAniversario = document.querySelector('.error-message-aniversario');
+
   if (!validaIdade(dataNascimento)){
     erroAniversario.innerHTML = 'É preciso ser maior de idade para se cadastrar.';
   } else {
