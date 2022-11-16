@@ -1,7 +1,5 @@
 const camposDoFormulario = document.querySelectorAll("[required]");
 const formulario = document.querySelector('.form');
-const cep = document.querySelector('#cep');
-const inputCEP = cep.value;
 
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -190,6 +188,7 @@ function validaSegundoDigito(cpf) {
 
 // validação de cep
 async function buscaEndereco(cep) {
+  const cep = document.querySelector('#cep');
   const erroCEP = document.querySelector('.error-message-cep');
   erroCEP.innerHTML = '';
 
