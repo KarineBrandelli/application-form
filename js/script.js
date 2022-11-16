@@ -1,19 +1,45 @@
 const camposDoFormulario = document.querySelectorAll("[required]");
 const formulario = document.querySelector('.form');
+const inputNome = document.querySelector('#nome');
+const inputEmail = document.querySelector('#email');
+const inputDataNascimento = document.querySelector('#aniversario');
+const inputCPF = document.querySelector('#cpf');
+const inputCEP = document.querySelector('#cep');
+const button = document.querySelector('#enviar');
 
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  window.location.href = "./cadastro-concluido.html";
+  const regex = /\d/g;
+  const resultado = regex.test(inputNome.value);
+  if (resultado) {
+    console.log('tem numeros')
+  }
+  else {
+    window.location.href = "/cadastro-concluido.html";
+  }
+
+
+
+
+  
 });
 
 camposDoFormulario.forEach((campo) => {
   campo.addEventListener("blur", () => verificaCampo(campo));
 });
 
-cep.addEventListener('focusout', () => 
-  buscaEndereco(cep.value)
+inputCEP.addEventListener('focusout', () => 
+  buscaEndereco(inputCEP.value)
 );
+
+
+inputEmail.addEventListener('input', () => {})
+inputDataNascimento.addEventListener('input', () => {})
+inputCPF.addEventListener('input', () => {})
+inputCEP.addEventListener('input', () => {})
+
+
 
 function verificaCampo(campo) {
   if (campo.name == "aniversario" && campo.value != "") {
@@ -28,11 +54,11 @@ function verificaCampo(campo) {
     cpfVazio(campo);
   }
 
-  if (campo.name == 'nome' && campo.value === "") {
+  if (campo.name == "nome" && campo.value === "") {
     validaNome(campo);
   }
 
-  if (campo.name == 'nome' && campo.value != "") {
+  if (campo.name == "nome" && campo.value != "") {
     verificaNome(campo);
   }
 
@@ -53,11 +79,10 @@ function validaNome(campo) {
 
 function verificaNome(campo) {
   const erroNome = document.querySelector('.error-message-name');
-  const inputNome = document.querySelector('#nome');
   const valorNome = inputNome.value;
 
   const myRegex = /[a-zA-Z\s]+$/;
-  const result = myRegex.test(valorNome)
+  const result = myRegex.test(valorNome);
   if (!result) {
     erroNome.innerHTML = 'Números e caracteres especiais (",!,@,#,$,%,&,*) não são permitidos.';
   } else {
@@ -73,7 +98,6 @@ function validaEmail(campo) {
 
 function verificaEmail(campo) {
   const erroEmail = document.querySelector('.error-message-email');
-  const inputEmail = document.querySelector('#email');
   const valorEmail = inputEmail.value;
 
   const myRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
@@ -109,7 +133,6 @@ function validaIdade(data) {
 // validação de cpf
 function cpfVazio(campo) {
   const erroCPF = document.querySelector('.error-message-cpf');
-  const inputCPF = document.querySelector('#cpf');
   const valorCPF = inputCPF.value;
 
   if (valorCPF === "") {
@@ -187,13 +210,12 @@ function validaSegundoDigito(cpf) {
 };
 
 // validação de cep
-async function buscaEndereco(cep) {
-  const cep = document.querySelector('#cep');
+async function buscaEndereco(inputCEP) {
   const erroCEP = document.querySelector('.error-message-cep');
   erroCEP.innerHTML = '';
 
   try {
-    let consultaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json`);
+    let consultaCEP = await fetch(`https://viacep.com.br/ws/${inputCEP}/json`);
     let consultaCEPConvertida = await consultaCEP.json();
     
     if (consultaCEPConvertida.erro) {
