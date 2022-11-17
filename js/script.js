@@ -19,8 +19,11 @@ formulario.addEventListener("submit", (event) => {
   const inputsValidados = [
     nomeTemNumero(),
     dataEhInvalida(),
-    cpfEhValido()
+    cpfEhValido(),
+    cepEhValido()
   ];
+
+  // console.log(inputsValidados);
 
   const listaValidada = inputsValidados.every(validado => validado);
 
@@ -51,6 +54,12 @@ function cpfEhValido() {
   ]
 
   return cpfValidado.every(validado => validado);
+}
+
+function cepEhValido() {
+  const contemClasse = inputCEP.classList.contains('validate-cep');
+
+  return contemClasse
 }
 
 function verificaCampo(campo) {
@@ -223,12 +232,12 @@ function validaSegundoDigito(cpf) {
 };
 
 // validação de cep
-async function buscaEndereco(inputCEP) {
+async function buscaEndereco(inputCep) {
   const erroCEP = document.querySelector('.error-message-cep');
   erroCEP.innerHTML = '';
 
   try {
-    let consultaCEP = await fetch(`https://viacep.com.br/ws/${inputCEP}/json`);
+    let consultaCEP = await fetch(`https://viacep.com.br/ws/${inputCep}/json`);
     let consultaCEPConvertida = await consultaCEP.json();
     
     if (consultaCEPConvertida.erro) {
@@ -244,10 +253,12 @@ async function buscaEndereco(inputCEP) {
     cidade.value = consultaCEPConvertida.localidade;
     logradouro.value = consultaCEPConvertida.logradouro;
     bairro.value = consultaCEPConvertida.bairro;
-
-    return consultaCEPConvertida;
+    
+    let newCEP = inputCEP.classList.add('validate-cep');
+    return newCEP;
 
     } catch (erro) {
     erroCEP.innerHTML = 'CEP inválido! Tente novamente.';
+    console.log(erro)
   }
 };
