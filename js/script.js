@@ -19,7 +19,7 @@ formulario.addEventListener("submit", (event) => {
   const inputsValidados = [
     nomeTemNumero(),
     dataEhInvalida(),
-    comprimentoCPF()
+    cpfEhValido()
   ];
 
   const listaValidada = inputsValidados.every(validado => validado);
@@ -42,7 +42,7 @@ function dataEhInvalida() {
   return validaIdade(dataNascimento)
 };
 
-function comprimentoCPF() {
+function cpfEhValido() {
   const cpf = inputCPF.value.replace(/\.|-/g, "");
   const cpfValidado =  [
     !validaPrimeiroDigito(cpf),
