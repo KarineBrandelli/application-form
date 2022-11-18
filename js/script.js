@@ -41,16 +41,16 @@ formulario.addEventListener("submit", (event) => {
   const complemento = event.target[10];
 
   const informacoesPreenchidas = {
-    nome: nome.value,
-    email: email.value,
-    aniversario: aniversario.value,
-    cpf: cpf.value,
-    cep: cep.value,
-    estado: estado.value,
-    cidade: cidade.value,
-    bairro: bairro.value,
-    rua: rua.value,
-    complemento: complemento.value
+    "nome": nome.value,
+    "email": email.value,
+    "aniversario": aniversario.value,
+    "cpf": cpf.value,
+    "cep": cep.value,
+    "estado": estado.value,
+    "cidade": cidade.value,
+    "bairro": bairro.value,
+    "rua": rua.value,
+    "complemento": complemento.value
   };
 
   localStorage.setItem("usuario", JSON.stringify(informacoesPreenchidas));
