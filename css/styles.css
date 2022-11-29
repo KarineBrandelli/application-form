@@ -147,7 +147,7 @@ label {
 .bairro-input,
 .rua-input,
 .complemento-input {
-  max-width: 48%;
+  flex: 1;
 }
 
 .btn-cadastrar {
