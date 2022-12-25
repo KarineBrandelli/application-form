@@ -3,7 +3,7 @@
 ## Descrição ✏️
 
 <p align="justify">
-A página desenvolvida representa um formulário onde o usuário irá preencher suas informações pessoais para concorrer a uma viagem para um local de sua escolha. Esse projeto foi realizado a fim de desenvolver habilidades em JavaScript para verificar a autenticidade das informações preenchidas pelo usuário, como e-mail, telefone, CPF e CEP.
+A página desenvolvida representa um formulário onde o usuário irá preencher suas informações pessoais para concorrer a uma viagem para um local de sua escolha. Esse projeto foi realizado a fim de desenvolver habilidades em JavaScript para verificar a autenticidade das informações preenchidas pelo usuário, como e-mail, data de nascimento, CPF e CEP.
 </p>
 
 <hr>
