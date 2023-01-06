@@ -271,14 +271,7 @@ h3 {
     text-align: center;
   }
 
-  .name-box,
-  .email-box,
-  .birth-box,
-  .cpf-box,
-  .cep-box,
-  .city-box,
-  .state-box,
-  .rua-box {
+  .flex-column {
     padding-bottom: .9rem;
   }
 
