@@ -28,8 +28,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex: 1.75;
+
   background-color: #191816;
   padding: 2rem;
 }
@@ -118,16 +118,7 @@ label {
   color: #afb6c2;
 }
 
-.name-box,
-.email-box,
-.birth-box,
-.cpf-box,
-.cep-box,
-.city-box,
-.state-box,
-.rua-box {
-  display: flex;
-  flex-direction: column;
+.flex-column {
   gap: .2rem;
   padding-bottom: .7rem;
 }
